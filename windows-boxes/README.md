@@ -9,7 +9,7 @@ description: >-
 <table>
   <thead>
     <tr>
-      <th style="text-align:center">&lt;b&gt;&lt;/b&gt;<a href="https://app.gitbook.com/@yaseen-razeq/s/hack-the-box-htb-oscp-prep/~/drafts/-MICiUbO-U2QO29Mble9/windows-boxes/jerry-without-metasploit"><b>Jerry</b></a>&lt;b&gt;&lt;/b&gt;</th>
+      <th style="text-align:center">&lt;b&gt;&lt;/b&gt;<a href="jerry-without-metasploit.md"><b>Jerry</b></a>&lt;b&gt;&lt;/b&gt;</th>
       <th
       style="text-align:center"></th>
     </tr>
