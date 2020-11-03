@@ -6,25 +6,9 @@ description: >-
 
 # Windows Boxes
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:center">&lt;b&gt;&lt;/b&gt;<a href="jerry-without-metasploit.md"><b>Jerry</b></a>&lt;b&gt;&lt;/b&gt;</th>
-      <th
-      style="text-align:center"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:center">
-        <img src="../.gitbook/assets/jerry-logo-and-info.png" alt/>&#x200B;</td>
-      <td style="text-align:center">
-        <p></p>
-        <p></p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| \*\*\*\*[**Jerry**](jerry-without-metasploit.md)\*\*\*\* |  |
+| :---: | :---: |
+| ![](../.gitbook/assets/jerry-logo-and-info.png)​ |  |
 
 
 
