@@ -6,18 +6,16 @@
 
 #### **`nmap -T4 -A -p- 10.10.10.95`**
 
-* -T4 flag is to speed the scan up at a much faster pace.
+* -T4 flag is to speed the scan up a bit. T3 is the default if this is not specified.
 * -A flag will enable Operating system, version detection, script scanning, and traceroute.
-* -p- flag will scan for all 65,535 ports.
+* -p- flag will scan for all 65,535 ports. By default, if this is not specified, nmap will scan the top 1000 ports.
 
 ![Results of nmap scan](../.gitbook/assets/jerry-nmap.png)
 
-#### Dissecting the results:
+#### Dissecting the Results:
 
-* We find that the only port that is open is port 8080. This port tends to be the second default choice to port 80, which is a webserver.
-* We see the webserver version is Apache Tomcat/Coyote JSP engine 1.1.
-* We also Apache Tomcat is version 7.0.88 which we can google more information on if we need to later.
-* Finally, we see the OS scan believes it to most likely be a Windows machine.
+* **Port 8080**: This port tends to be the second default choice to port 80, which is a webserver. We see the webserver version is Apache Tomcat/Coyote JSP engine 1.1. We also see Apache Tomcat is version 7.0.88 which we can google more information on if we need to later.
+* We see the OS scan believes it to most likely be a Windows machine.
 
 ### Navigating the Webserver
 
